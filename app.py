@@ -4,8 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import pairwise_distances
 
+# Scikit-learn algorithm
 from sklearn.cluster import KMeans as km
-
+# Custom algorithm
 from kmeans_v2 import CustomKMeans as ckm
 
 def list_image_files(folder_path):
