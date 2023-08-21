@@ -83,7 +83,7 @@ def segment_image(selected_image_path):
     print(f"Scikit-learn KMeans took {scikit_end - scikit_start} seconds.")
     print(f"Custom KMeans took {custom_end - custom_start} seconds.")
 
-images_folder = 'C:\Users\teja1\Downloads'
+images_folder = 'C:/Users/teja1/Downloads'
 image_files = list_image_files(images_folder)
 
 print("Available image files in the Downloads folder:")
