@@ -1,2 +1,7 @@
 __pycache__/kmeans.cpython-311.pyc
 __pycache__/kmeans_v2.cpython-311.pyc
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/KMeans-Segmentation-from-Scratch.iml
