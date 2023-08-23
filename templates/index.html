@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Means Image Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>K-Means Image Segmentation</h1>
+    <form action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+        <label for="image">Select an image:</label>
+        <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg, .gif, .bmp" required>
+        <label for="clusters">Number of Clusters:</label>
+        <select id="clusters" name="clusters" required>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+        </select>
+        <button type="submit">Segment Image</button>
+    </form>
+    <!-- ... -->
+</body>
+</html>
