@@ -20,7 +20,9 @@ def segment_image(selected_image_path):
     plt.imshow(image)
     plt.show()
 
-    num_clusters = int(input("Clusters (more than 4 and less than 18): "))    
+    num_clusters = int(input("Clusters (more than 5 and less than 15): "))    
+
+    print("\nSegmenting the image using Custom KMeans...\n")
 
     # Custom segmentation
     n_pixels = image.shape[0] * image.shape[1]
