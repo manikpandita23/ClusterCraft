@@ -1,74 +1,61 @@
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
 import os
-import time
+import base64
+import io
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import pairwise_distances
-
-# Custom algorithm
 from kmeans_v2 import CustomKMeans as ckm
+from sklearn.metrics import pairwise_distances
+import matplotlib.backends.backend_agg as agg
 
-def list_image_files(folder_path):
-    image_extensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp']
-    image_files = [file for file in os.listdir(folder_path) if os.path.splitext(file)[1].lower() in image_extensions]
-    return image_files
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.path.abspath('uploads')
 
-def segment_image(selected_image_path):
-    image = plt.imread(selected_image_path)
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    original_image = None
+    segmented_image = None
 
-    plt.figure(figsize=(10, 5))
-    plt.title('Original Image')
-    plt.imshow(image)
-    plt.show()
+    if request.method == 'POST':
+        image = request.files['image']
+        num_clusters = int(request.form['clusters'])
 
-    num_clusters = int(input("Clusters (more than 5 and less than 15): "))    
+        if image:
+            filename = secure_filename(image.filename)
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            image.save(image_path)
 
-    print("\nSegmenting the image using Custom KMeans...\n")
+            original_image, segmented_image = segment_image(image_path, num_clusters)
 
-    # Custom segmentation
+    return render_template('index.html', original_image=original_image, segmented_image=segmented_image)
+
+def segment_image(selected_image_path, num_clusters):
+    image = plt.imread(selected_image_path) 
+
     n_pixels = image.shape[0] * image.shape[1]
     image_pixels = image.reshape(n_pixels, -1)
 
-    custom_start = time.time()
     kmeans_custom = ckm(n_clusters=num_clusters)
     kmeans_custom.fit(image_pixels)
     cluster_labels = kmeans_custom.predict(image_pixels)
-    segmented_img_2 = kmeans_custom.centroids[cluster_labels].reshape(image.shape)
-    custom_end = time.time()
+    segmented_img = kmeans_custom.centroids[cluster_labels].reshape(image.shape)
 
-    plt.figure(figsize=(10, 5))
+    original_image_b64 = image_to_base64(image)
+    segmented_image_b64 = image_to_base64(segmented_img)
 
-    # Original image
-    plt.subplot(121)
-    plt.title("Original Image")
+    return f"data:image/png;base64,{original_image_b64}", f"data:image/png;base64,{segmented_image_b64}"
+
+def image_to_base64(image):
+    img_buffer = io.BytesIO()
+    plt.figure()
+    plt.axis('off')
     plt.imshow(image)
-    plt.axis('on')
+    plt.savefig(img_buffer, format='png')
+    img_buffer.seek(0)
+    img_base64 = base64.b64encode(img_buffer.read()).decode('utf-8')
+    plt.close()
+    return img_base64
 
-    # Segmentation using custom KMeans
-    plt.subplot(122)
-    plt.title("Segmentation (custom KMeans)")
-    plt.imshow(segmented_img_2.astype(np.uint8))
-    plt.axis('on')
-
-    # Adjust spacing between subplots
-    plt.tight_layout()
-
-    # Show the plot
-    plt.show()
-
-    print(f"Custom KMeans took {custom_end - custom_start} seconds.")
-
-images_folder = 'C:/Users/teja1/Downloads'
-image_files = list_image_files(images_folder)
-
-print("Available image files in the Downloads folder:")
-for idx, file in enumerate(image_files, start=1):
-    print(f"{idx}. {file}")
-
-selected_index = int(input("Enter the index of the image to perform segmentation on: ")) - 1
-
-if 0 <= selected_index < len(image_files):
-    selected_image_path = os.path.join(images_folder, image_files[selected_index])
-    print(f"Selected image: {selected_image_path}")
-    segment_image(selected_image_path)
-else:
-    print("Invalid index.")
+if __name__ == '__main__':
+    app.run(debug=True)
