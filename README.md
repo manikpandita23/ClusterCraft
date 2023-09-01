@@ -1,1 +1,1 @@
-# KMeans-Segmentation-from-Scratch
+# KMeans Image Segmentation from Scratch
