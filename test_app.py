@@ -20,7 +20,7 @@ def segment_image(selected_image_path):
     plt.imshow(image)
     plt.show()
 
-    num_clusters = int(input("Clusters (more than 5 and less than 15): "))    
+    num_clusters = int(input("\nNumber of clusters (more than 5 and less than 15): "))    
 
     print("\nSegmenting the image using Custom KMeans...\n")
 
@@ -55,7 +55,7 @@ def segment_image(selected_image_path):
     # Show the plot
     plt.show()
 
-    print(f"Custom KMeans took {custom_end - custom_start} seconds.")
+    print(f"Custom KMeans took {custom_end - custom_start} seconds.\n")
 
 images_folder = 'C:/Users/teja1/Downloads'
 image_files = list_image_files(images_folder)
