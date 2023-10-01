@@ -4,14 +4,13 @@ This project has implemented k-means clustering algorithm from using python.
 
 ## Table of Contents
 
-- [What is KMeans clustering algorithm and how does it work](#What-is-kmeans-clustering-algorithm-and-how-does-it-work)
+- [What is KMeans clustering algorithm and how does it work](#what-is-kmeans-clustering-algorithm-and-how-does-it-work)
     - [It works by](#it-works-by)
 - [Algorithm Implementation](#algorithm-implementation)
     - [Initialization](#initialization)
     - [Assignment](#assignment)
     - [Updating](#updating)
-    - [Iteration](#iteration)
-    - [Stopping Condition](#stopping-condition)
+    - [Iteration and Stopping Condition](#iteration-and-stopping-condition)
 <!-- - [Content of repository](#content-of-repository) -->
 - [Dependence](#dependence)
 - [Installation](#installation)
