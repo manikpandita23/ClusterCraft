@@ -74,6 +74,7 @@ For selecting the initial 'k' cluster centroids, we take 'k' random pixels form 
 
 <details>
 <summary>Code-snippet</summary>
+    
 ```python:
     def initialize_centroids(self, X):
         random_indices = np.random.choice(X.shape[0], self.n_clusters, replace=False)
@@ -95,6 +96,7 @@ here x2 and y2 are cluster's location and color distances respectively while x1 
 
 <details>
 <summary>Code-snippet</summary>
+    
 ```python:
     def assign_clusters(self, X):
         distances = pairwise_distances(X, self.centroids)
@@ -120,6 +122,7 @@ here x2 and y2 are cluster's location and color distances respectively while x1 
 
 <details>
 <summary>Code-snippet</summary>
+    
 ```python:
     def update_centroids(self, X):
         new_centroids = np.array([X[self.labels == k].mean(axis=0) for k in range(self.n_clusters)])
@@ -133,6 +136,7 @@ Now we repeat Assignment and Updating steps for 100 Iteration cycles.
 
 <details>
 <summary>Code-snippet</summary>
+    
 ```python:
     for _ in range(self.max_iters):
         prev_centroids = self.centroids.copy()
@@ -155,10 +159,10 @@ To run the project you will need the following:
 
 1) [Python](https://www.python.org/downloads/)
 2) Following python libraries (have pip installed)
-    1) numpy (pip install numpy)
-    2) matplotlib (pip install matplotlib)
-    3) scikit-metrics (pip install scikit-metrics)
-    4) flask (pip install Flask)
+    1) numpy (``pip install numpy``)
+    2) matplotlib (``pip install matplotlib``)
+    3) scikit-metrics (``pip install scikit-metrics``)
+    4) flask (``pip install Flask``)
 
 ## Installation
 
