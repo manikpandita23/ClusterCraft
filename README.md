@@ -22,9 +22,9 @@ K-Means clustering is a popular unsupervised machine learning algorithm used for
 
 ### Example:
 
-| Before K-Means                                     | After K-Means                                   |
-| -------------------------------------------------- | ----------------------------------------------- |
-| ![Before K-Means](README%20resources/before_kmeans.png 'Before K-Means') | ![After K-Means](README%20resources/after_kmeans.png 'After K-Means') |
+| Before K-Means                                          | After K-Means                                   |
+| --------------------------------------------------------| ----------------------------------------------- |
+| ![Before K-Means](README%20resources/before_kmeans.png) | ![After K-Means](README%20resources/after_kmeans.png) |
 
 
 
