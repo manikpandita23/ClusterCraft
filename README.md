@@ -1,10 +1,10 @@
-# KMeans Image Segmentation from Scratch
+# k-Means Image Segmentation from Scratch
 
-This project has implemented k-means clustering algorithm from using python.
+This project has implemented k-means clustering algorithm for image segmentation from scratch.
 
 ## Table of Contents
 
-- [What is KMeans clustering algorithm and how does it work](#what-is-kmeans-clustering-algorithm-and-how-does-it-work)
+- [What is k-means clustering algorithm and how does it work?](#what-is-kmeans-clustering-algorithm-and-how-does-it-work)
     - [It works by](#it-works-by)
 - [Algorithm Implementation](#algorithm-implementation)
     - [Initialization](#initialization)
@@ -20,37 +20,25 @@ This project has implemented k-means clustering algorithm from using python.
 ## What is KMeans clustering algorithm and how does it work
 K-Means clustering is a popular unsupervised machine learning algorithm used for data segmentation and clustering. It is primarily used to group data points into clusters based on their similarity or proximity.
 
-Example:
+### Example:
 
-Before:
+| Before K-Means                                     | After K-Means                                   |
+| -------------------------------------------------- | ----------------------------------------------- |
+| ![Before K-Means](README%20resources/before_kmeans.png 'Before K-Means') | ![After K-Means](README%20resources/after_kmeans.png 'After K-Means') |
 
-![before_kmeans](<README resources/before_kmeans.png>)
 
-After:
 
-![after_kmeans](<README resources/after_kmeans.png>)
+> Image segmentation with clustering is a computer vision technique that involves the use of clustering algorithms to partition an image into distinct regions or clusters based on similarities in pixel values. This process is particularly useful in tasks like object detection and scene analysis, where isolating and understanding different parts of an image is essential.
+>
+> **Higher `k` values lead to more detailed image, but at the expense of higher compute cost and runtime.**
 
-as we can see the nearby dots got grouped together
 
-In image segmentation, it basically provides a segmented image, aka a less detailed version of the image. 
 
-More clusters (value of k (in the project it can only lie between 5 and 15 (both included))) means more detail.
+### Example:
 
-Example:
-
-Before:
-
-![before_kmeans_img_seg](<README resources/before_kmeans_img_seg.jpeg>)
-
-After:
-
-(using 2 clusters)
-
-![after_kmeans_img_seg_2](<README resources/after_kmeans_img_seg_2.png>)
-
-(using 5 clusters)
-
-![after_kmeans_img_seg_5](<README resources/after_kmeans_img_seg_5.png>)
+| Original Image                                            | 2 Clusters                                          | 5 Clusters                                          |
+| --------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| ![Before K-Means](README%20resources/before_kmeans_img_seg.jpeg 'Before K-Means') | ![After K-Means (2 Clusters)](README%20resources/after_kmeans_img_seg_2.png 'After K-Means (2 Clusters)') | ![After K-Means (5 Clusters)](README%20resources/after_kmeans_img_seg_5.png 'After K-Means (5 Clusters)') |
 
 
 
