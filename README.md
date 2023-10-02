@@ -72,11 +72,16 @@ For selecting the initial 'k' cluster centroids, we take 'k' random pixels form 
 Then we assign each pixel to its nearest cluster (the distance between a cluster and a pixel found by their **Euclidean Distance**)
 
 <details>
-<summary>Euclidean Distance</summary>
-Euclidean Distance = √((x2 - x1)^2 + (y2 - y1)^2) 
-
-here x2 and y2 are cluster's location and color distances respectively while x1 and x2 are the location and color of the pixel with which the distance is being found.
+  <summary>Euclidean Distance</summary>
+  
+$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$
+    
+Where:
+- $(x_1$, $y_1)$ are coordinates of the first point.
+- $(x_2$, $y_2)$ are coordinates of the second point.
+- $d$ is the Euclidean distance between $(x_1$, $y_1)$ and $(x_2$, $y_2)$
 </details>
+
 
 <details>
 <summary>Code-snippet</summary>
@@ -91,17 +96,11 @@ here x2 and y2 are cluster's location and color distances respectively while x1 
 
 ### Updating
 
-Then we take the mean (by using the **mean formula**) of all the pixels in a cluster making the coordinates of the mean as the new centroid.
-
-We do this for all 'k' clusters.
+We calculate the mean of distances all the pixels in a cluster to determine the new centroid position. This is done for all *k* clusters.
 
 <details>
 <summary>Mean Formula</summary>
-Mean = (1 / n) * Σ(All Points in Cluster)
-
-here mean new centroid, Σ(All Points in Cluster) means sum of all the points in the current cluster and n refers to the number of points in the cluster
-
-here x2 and y2 are cluster's location and color distances respectively while x1 and x2 are the location and color of the pixel with which the distance is being found.
+ $Mean = \frac{1}{n} \sum d_{i}$
 </details>
 
 <details>
@@ -116,7 +115,7 @@ here x2 and y2 are cluster's location and color distances respectively while x1 
 
 ### Iteration and Stopping Condition
 
-Now we repeat Assignment and Updating steps for 100 Iteration cycles.
+The assignment and updation steps are repeated until the centroids positional change is close to the tolerance limit `tol`. To avoid infinite loops, a limit of 100 iterations is set.
 
 <details>
 <summary>Code-snippet</summary>
@@ -139,13 +138,13 @@ Now we repeat Assignment and Updating steps for 100 Iteration cycles.
 
 ## Dependence
 
-To run the project you will need the following:
+Following are the project dependencies:
 
 1) [Python](https://www.python.org/downloads/)
 2) Following python libraries (have pip installed)
     1) numpy (``pip install numpy``)
     2) matplotlib (``pip install matplotlib``)
-    3) scikit-metrics (``pip install scikit-metrics``)
+    3) scikit-learn (``pip install scikit-learn``)
     4) flask (``pip install Flask``)
 
 ## Installation
