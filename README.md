@@ -30,7 +30,7 @@ K-Means clustering is a popular unsupervised machine learning algorithm used for
 
 > Image segmentation with clustering is a computer vision technique that involves the use of clustering algorithms to partition an image into distinct regions or clusters based on similarities in pixel values. This process is particularly useful in tasks like object detection and scene analysis, where isolating and understanding different parts of an image is essential.
 >
-> **Higher `k` values lead to more detailed image, but at the expense of higher compute cost and runtime.**
+> **Higher *k* values lead to more detailed image, but at the expense of higher compute cost and runtime.**
 
 
 
@@ -44,15 +44,11 @@ K-Means clustering is a popular unsupervised machine learning algorithm used for
 
 ### It works by:
 
-First staring with K initial cluster centroids (representative points). (Initialization step)
-
-Then it assigns each data point to the nearest centroid, forming clusters. (Assignment step)
-
-After which it recalculate the centroids by taking the mean of data points in each cluster. (Updating step)
-
-Then it repeat last 2 steps (Assignment and Updating) until centroids no longer change significantly. (Iteration step and stopping condition)
-
-Finally, we get K clusters with data points grouped by similarity.
+- First starting with *k* initial cluster centroids (representative points). (Initialization step)
+- Assign each data point to the nearest centroid, forming clusters. (Assignment step)
+- After which it recalculates the centroid position by taking the mean of data points in each cluster. (Updating step)
+- Repeat last 2 steps (Assignment and Updating) until centroids no longer change significantly. (Iteration step and stopping condition)
+- Finally, we get *k* clusters with data points grouped by similarity.
 
 ## Algorithm Implementation
 First we got the image and cluster number as input and then implement the algorithm by following process:
