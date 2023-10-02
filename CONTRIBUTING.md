@@ -17,7 +17,7 @@ Thank you for considering contributing to the K-Means Algorithm Project! Your co
 
 ## Code of Conduct
 
-Before you start contributing, please read and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). We expect all contributors to follow these guidelines to maintain a respectful and welcoming community.
+We expect all contributors to follow these guidelines to maintain a respectful and welcoming community. The K-Means Algorithm Project is open for use by developers. If you use code from this repository in your project, I kindly request that you acknowledge or mention this repository in your project's documentation or credits.
 
 ## Getting Started
 
