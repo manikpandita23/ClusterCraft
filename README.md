@@ -149,17 +149,16 @@ Following are the project dependencies:
 
 ## Installation
 
-To install just download the zip file extract it and done!
+Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.git```
 
 ## How to use
 
-1) Run [***app.py***](./app.py) file in your python compiler
-2) Go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
-3) Select an image and cluster number 
-4) Click on 'segment image' 
-**AND DONE!** you will then get your KMeans segmented image
+1) Run [***app.py***](./app.py) file in your 
+2) Go to [http://127.0.0.1:5000](http://127.0.0.1:5000).
+3) Select an image and cluster number. 
+4) Click on **segment image** to get the segmented image.
 
-Remember higher the cluster number the more time it will take to provide you withe the final image.
+**Note:** higher the cluster number the more time it will take to provide you withe the final image.
 
 ## Contributing
-See [Contributing](./CONTRIBUTING.md) for the contribution guidelines
+See [Contributing](./CONTRIBUTING.md) for the contribution guidelines.
