@@ -13,7 +13,7 @@ This project has implemented k-means clustering algorithm for image segmentation
     - [Iteration and Stopping Condition](#iteration-and-stopping-condition)
 <!-- - [Content of repository](#content-of-repository) -->
 - [Dependence](#dependence)
-- [Installation](#installation)
+- [Download](#download)
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
 
@@ -136,7 +136,7 @@ The assignment and updation steps are repeated until the centroids positional ch
 |:---:|:--:|:-------:|:------:|:------:| -->
 
 
-## Dependence
+## Dependencies
 
 Following are the project dependencies:
 
@@ -147,9 +147,9 @@ Following are the project dependencies:
     3) scikit-learn (``pip install scikit-learn``)
     4) flask (``pip install Flask``)
 
-## Installation
+## Download
 
-Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.git```
+Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.git``` in your terminal
 
 ## How to use
 
