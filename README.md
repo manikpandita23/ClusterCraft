@@ -12,7 +12,7 @@ This project has implemented k Means clustering algorithm for segmenting an imag
     - [Updating](#updating)
     - [Iteration and Stopping Condition](#iteration-and-stopping-condition)
 <!-- - [Content of repository](#content-of-repository) -->
-- [Dependence](#dependence)
+- [Dependencies](#dependencies)
 - [Download](#download)
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
