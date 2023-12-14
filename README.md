@@ -1,6 +1,6 @@
 # k-Means Image Segmentation from Scratch
 
-This project has implemented k-means clustering algorithm for image segmentation from scratch.
+This project has implemented k Means clustering algorithm for segmenting an image from scratch.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ This project has implemented k-means clustering algorithm for image segmentation
 - [How to use](#how-to-use)
 - [Contributing](#contributing)
 
-## What is KMeans clustering algorithm and how does it work
+## What is k Means clustering algorithm and how does it work?
 K-Means clustering is a popular unsupervised machine learning algorithm used for data segmentation and clustering. It is primarily used to group data points into clusters based on their similarity or proximity.
 
 ### Example:
