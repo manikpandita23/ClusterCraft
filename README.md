@@ -153,12 +153,12 @@ Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.gi
 
 ## How to use
 
-1) Run [***app.py***](./app.py) file in your 
+1) Run [***app.py***](./app.py) in your preferred IDE or code editor.
 2) Go to [http://127.0.0.1:5000](http://127.0.0.1:5000).
-3) Select an image and cluster number. 
-4) Click on **segment image** to get the segmented image.
+3) Choose an image from your directories and select a cluster count. 
+4) Click on **Segment image** button to get the segmented image.
 
-**Note:** higher the cluster number the more time it will take to provide you withe the final image.
+**Note:** Higher cluster count requires significantly higer computational power and time.
 
 ## Contributing
 See [Contributing](./CONTRIBUTING.md) for the contribution guidelines.
