@@ -149,7 +149,7 @@ Following are the project dependencies:
 
 ## Download
 
-Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.git``` in your terminal
+Run ```git clone https://github.com/surtecha/KMeans-Segmentation-from-Scratch.git``` in your terminal and navigate the folder for `app.py`.
 
 ## How to use
 
