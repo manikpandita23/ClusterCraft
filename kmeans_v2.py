@@ -1,3 +1,4 @@
+#Importing libraries
 import numpy as np
 from sklearn.metrics import pairwise_distances
 
@@ -22,7 +23,8 @@ class CustomKMeans:
     def update_centroids(self, X):
         new_centroids = np.array([X[self.labels == k].mean(axis=0) for k in range(self.n_clusters)])
         return new_centroids
-        
+    
+    # Fit function
     def fit(self, X):
         self.centroids = self.initialize_centroids(X)
         for _ in range(self.max_iters):
@@ -33,7 +35,8 @@ class CustomKMeans:
             
             if np.linalg.norm(self.centroids - prev_centroids) < self.tol:
                 break
-                
+
+    # Prediction function          
     def predict(self, X):
         distances = pairwise_distances(X, self.centroids)
         labels = np.argmin(distances, axis=1)
